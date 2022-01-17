@@ -16,6 +16,7 @@ jobs:
           update: false
 
     - run: choco install erlang
+      shell: powershell
 
     - run: |
         mkdir $HOME/elixir && cd $HOME/elixir
