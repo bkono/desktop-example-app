@@ -8,7 +8,7 @@ defmodule Todo.MixProject do
       version: @version,
       elixir: "~> 1.10",
       elixirc_paths: elixirc_paths(Mix.env()),
-      compilers: [:phoenix | Mix.compilers()],
+      # compilers: [Mix.compilers()],
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       aliases: aliases()
@@ -62,15 +62,18 @@ defmodule Todo.MixProject do
   defp deps do
     deps_list = [
       {:ecto_sqlite3, "~> 0.8"},
-      {:exqlite, github: "elixir-desktop/exqlite", override: true},
-      # {:desktop, path: "../desktop"},
-      {:desktop, "~> 1.4"},
+      {:exqlite, "~> 0.13.10"},
+      # {:exqlite, github: "elixir-desktop/exqlite", override: true},
+      {:desktop, path: "../desktop"},
+      # {:desktop, "~> 1.4"},
 
       # Phoenix
-      {:phoenix, "~> 1.6"},
-      {:phoenix_live_view, "~> 0.17.11"},
+      {:phoenix, "~> 1.7"},
+      {:phoenix_live_view, "~> 0.18.3"},
       {:phoenix_html, "~> 3.0"},
+      {:phoenix_live_dashboard, "~> 0.7.2"},
       {:phoenix_live_reload, "~> 1.3", only: [:dev]},
+      {:phoenix_view, "~> 2.0"},
       {:gettext, "~> 0.18"},
       {:plug_cowboy, "~> 2.5"},
       {:jason, "~> 1.2"},
